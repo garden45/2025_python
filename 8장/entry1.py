@@ -1,6 +1,6 @@
 from tkinter import*
 
-def get_entry_value():
+def x():
     value=entry.get()
     print("입력된 값:",value)
 
@@ -10,7 +10,7 @@ root.geometry("300x200")
 entry=Entry(root)
 entry.pack()
 
-button=Button(root, text="확인", command=get_entry_value)
+button=Button(root, text="확인", command=x)
 button.pack()
 
 root.mainloop()
