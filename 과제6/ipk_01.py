@@ -1,4 +1,4 @@
-from tkinter import*
+import tkinter as tk
 
 class Vehicle:
     def __init__(self, name):
@@ -15,15 +15,30 @@ class Truck(Vehicle):
     def drive(self):
         return (f"트럭 {self.name}가 화물을 싣고 주행합니다.")
     
-car = Car("car1")
-truck = Truck("truck1")
+car=Car("car1")
+truck=Truck("truck1")
 
-root=Tk()
+root=tk.Tk()
 root.title("문제1")
-root.geometry("400X300")
+root.geometry("400x300")
 
-label=Label(root, text="버튼을 눌러보세요.")
-label.pack()
+label=tk.Label(root, text="버튼을 눌러보세요.")
+label.pack(pady=10)
 
+frame=tk.Frame(root)
+frame.pack(pady=10)
 
-button1=Button(root, text="자동차 주행")
+def show_car():
+    result.set(car.drive())
+
+def show_truck():
+    result.set(truck.drive())
+
+tk.Button(frame, text="자동차 주행", command=show_car).pack(side="left", padx=10)
+tk.Button(frame, text="트럭 주행", command=show_truck).pack(side="left", padx=10)
+
+result=tk.StringVar(value="")
+label1=tk.Label(root, textvariable=result)
+label1.pack(pady=10)
+
+root.mainloop()
