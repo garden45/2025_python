@@ -2,7 +2,7 @@ import tkinter as tk
 
 class Animal:
     def speak(self):
-        return " "
+        return " "  # " "는 아무것도 아닌 값을 의미함. speak이라는 메소드를 사용했기에 반환값이 필요함.
 
 class Dog(Animal):
     def speak(self):

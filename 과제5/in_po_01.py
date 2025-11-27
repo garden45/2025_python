@@ -3,7 +3,7 @@ class Car:
         self.speed=speed
 
     def get_speed(self):
-        return (f"현재 속도: {self.get_speed}km/h")
+        return (f"현재 속도: {self.speed}km/h")
     
 class SportsCar(Car):
     def __init__(self, speed, turbo):
