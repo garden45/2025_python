@@ -20,6 +20,7 @@ class Book:
     else:
       return (f"{self.title}은(는) 대출되지 않은 상태입니다.")
 
+# 입력 값 가져오기
 def borrow_book():
   title = entry_title.get()
   author = entry_author.get()
@@ -28,6 +29,7 @@ def borrow_book():
     label_result.config(text="제목과 저자를 모두 입력하세요.", fg="red")
     return
 
+# global은 전역변수, config는 변경할 때
   global book
   book = Book(title, author)
   msg = book.borrow()
@@ -45,13 +47,18 @@ root = Tk()
 root.title("도서 대출 관리 프로그램")
 root.geometry("380x220")
 
+# pady는 위아래 여백
+# padx는 좌우 여백
 Label(root, text="도서 대출 관리 시스템", font=("Arial", 13, "bold")).pack(pady=8)
 
+# 제목, 저자 입력 칸을 정렬하기 위해
 frame_input = Frame(root)
 frame_input.pack(pady=5)
 
+# 제목: 부분은 (0,0)
 Label(frame_input, text="제목:").grid(row=0, column=0, padx=5, pady=5)
 entry_title = Entry(frame_input, width=25)
+# 입력 부분은 (0,1)
 entry_title.grid(row=0, column=1, padx=5, pady=5)
 
 Label(frame_input, text="저자:").grid(row=1, column=0, padx=5, pady=5)
